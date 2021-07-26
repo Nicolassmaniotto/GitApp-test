@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas A. Smaniotto</title>
+</head>
+<body>
+    <div>
+        <a href="">Home</a>
+    </div>
+        <div id='content' class="content" >
+
+        </div>
+        <div id='linkcontent' >
+            
+        </div>
+</body>
+<script type="text/javascript" src="js/json_ fetch.js"></script>
+<script type="text/javascript" src="js/git/git_user.js"></script>
+<script type="text/javascript" src="js/git/git_since.js"></script>
+<script>
+    function FetchSince(){
+        var i = 0;
+        let url = `/php/gitSince.php?pos=${i}`;
+        json_fetch(url,'content',git_since)
+    }
+    function dataUser(user){
+        console.log('aqui');
+        let url = `/php/gitUserDetails.php?user=${user}`;
+        json_fetch(url,'content',git_user)
+        var link = window.location.host+url;
+        document.title = "Data "+user;
+        // document.getElementById('linkcontent').innerHTML = `<a href='${link}'> ${link} </a>`;
+    }
+    FetchSince();
+</script>
+</html>
