@@ -1,8 +1,8 @@
 <?php
 include_once 'globalFunctions/opGet.php';
 // $getUrl = opGet::get_url();
-if(isset($_GET['pos'])){
-    $initPosition = $_GET['pos'];
+if(isset($_GET['since'])){
+    $initPosition = $_GET['since'];
 }else{
     $initPosition = 0;
 }

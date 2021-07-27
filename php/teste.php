@@ -1,0 +1,1 @@
+<h1>teste: <?=$_GET['teste'];?></h1>

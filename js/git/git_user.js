@@ -1,6 +1,7 @@
 function git_user(data,pos){
         console.log(data);
         document.getElementById(pos).innerHTML =  `
+        <div id='details'>
         <h1>Name:
          ${data.login}
         </h1>
@@ -16,6 +17,11 @@ function git_user(data,pos){
         <h2>Create Profile Data:
         ${data.created_at}
         </h2>
+        <a onclick="gitRepos('${data.login}')" href='#'> Repositories: </a>
+        <div id='details_repos'>
+        
+        </div>
+        </div>
 
 
         `;

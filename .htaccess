@@ -1,0 +1,23 @@
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css|js|gif|png|jpe?g|svg|svgz|ico|webp|html)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+
+RewriteEngine On
+Options +FollowSymLinks
+RewriteRule ^api/teste  /php/teste.php [QSA,L]
+
+
+RewriteEngine On
+Options +FollowSymLinks
+RewriteRule ^api/users/(.*)/details /php/gitUserDetails.php?user=$1
+
+RewriteEngine On
+Options +FollowSymLinks
+RewriteRule ^api/users/(.*)/repos /php/gitUserRepo.php?gituser=$1
+
+RewriteEngine On
+Options +FollowSymLinks
+RewriteRule ^api/users  /php/gitSince.php [QSA,L]

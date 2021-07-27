@@ -15,24 +15,33 @@
         <div id='linkcontent' >
             
         </div>
-</body>
+<div>
 <script type="text/javascript" src="js/json_ fetch.js"></script>
 <script type="text/javascript" src="js/git/git_user.js"></script>
 <script type="text/javascript" src="js/git/git_since.js"></script>
+<script type="text/javascript" src="js/git/repos.js"></script>
 <script>
     function FetchSince(){
         var i = 0;
-        let url = `/php/gitSince.php?pos=${i}`;
+        let url = `/api/users/?since=${i}`;
         json_fetch(url,'content',git_since)
     }
     function dataUser(user){
         console.log('aqui');
-        let url = `/php/gitUserDetails.php?user=${user}`;
+        let url = `/api/users/${user}/details`;
         json_fetch(url,'content',git_user)
         var link = window.location.host+url;
         document.title = "Data "+user;
         // document.getElementById('linkcontent').innerHTML = `<a href='${link}'> ${link} </a>`;
     }
+    function gitRepos(user){
+        // console.log('aqui');]
+        let url = `/api/users/${user}/repos`;
+        json_fetch(url,'details_repos',git_repo)
+    }
     FetchSince();
 </script>
+</div>
+</body>
+
 </html>
